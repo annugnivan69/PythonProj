@@ -4,16 +4,13 @@ class Player:
         pass
 
     def play(self, dice_face, available_rerolls):
-       dice = copy.deepcopy(dice_face)
+       dice = copy.deepcopy(dice_face) 
        dice_dict = {} #the dictionary for dice
        ring_ding = False
        
        #puts the values into a dictionary
        for x in dice:
-           if x != dice_dict.keys():
-               dice_dict.setdefault(x, dice.count(x))
-           else:
-               dice_dict[x] = dice_dict[x] + 1
+           dice_dict.setdefault(x, dice.count(x))
 
        #will be used to see what moves can be get from the dice_dict
        conditions = {
