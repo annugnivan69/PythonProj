@@ -18,17 +18,12 @@ class Player:
            'Straight': False,
            'Full house': False,
            'Four-of-a-kind': False,
-           'Three-of-a-kind': False,
-           'Shitty combo' : True #rework this to force a reroll of all dice
+           'Three-of-a-kind': False
        }
 
        #production rules to find the approriate roll
        if (5 in dice_dict.values()) or (4 in dice_dict.values()) or (3 in dice_dict.values()):
            conditions['5-In-A-Row'] = True
-
-       #this needs to be reowrked BLACK SHEEP BLACK SHEEP
-       if 69 == 68:#(1 and 2 and 3 and 4 and 5) in dice_dict.keys() or (2 and 3 and 4 and 5 and 6) in dice_dict.keys() or len(dice_dict.keys()) == 4:
-           conditions['Straight'] = True
 
        if (3 and 2) in dice_dict.values() or (3 and 1) in dice_dict.values() or (2 and 2) in dice_dict.values():
            conditions['Full house'] = True
