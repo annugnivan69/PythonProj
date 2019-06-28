@@ -4,7 +4,7 @@ class Player:
         pass
 
     def play(self, dice_face, available_rerolls):
-       dice = copy.deepcopy(dice_face) 
+       dice = copy.deepcopy(dice_face)
        dice_dict = {} #the dictionary for dice
        ring_ding = False
        
@@ -125,7 +125,7 @@ class Player:
            safelist_priority.setdefault(priority, safelist)
 
        #rule intepreter
-       biggest_priority = 10
+       biggest_priority = 0
        biggest_probability = 0 #to find the highest probability
        priority_thresh = 0 #prevents the firing of low priority rules
        keepers = []
@@ -137,7 +137,7 @@ class Player:
                    priority_thresh = k
                else:
                    biggest_probability = v
-               if k < biggest_priority and k > priority_thresh:
+               if k > biggest_priority and k > priority_thresh:
                    biggest_priority = k
 
        print(biggest_priority)
